@@ -99,3 +99,5 @@ app.listen(
     `Server running in mode : ${process.env.NODE_ENV} on PORT : ${PORT}`
   )
 );
+
+module.exports = app;
