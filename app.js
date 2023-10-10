@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const methodOverride = require("method-override");
 const passport = require("passport");
+const path=require('path')
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const connectDB = require("./config/db");
@@ -62,8 +63,13 @@ app.engine(
   })
 );
 
-app.set('views', __dirname + './views');
-app.set("view engine", ".hbs");
+app.set('views', path.join(__dirname, '..', 'views'));
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  layoutsDir: path.join(__dirname, '..', 'views', 'layouts'),
+  partialsDir: path.join(__dirname, '..', 'views', 'partials')}
+));
+
 
 //Session
 app.use(
