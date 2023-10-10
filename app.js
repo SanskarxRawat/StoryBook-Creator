@@ -61,6 +61,8 @@ app.engine(
     extname: ".hbs",
   })
 );
+
+app.set('views', __dirname + './views');
 app.set("view engine", ".hbs");
 
 //Session
