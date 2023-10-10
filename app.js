@@ -49,7 +49,7 @@ const {
 
 //Handlebars
 app.engine(
-  ".hbs",
+  ".handlebars",
   exphbs.engine({
     helpers: {
       formatDate,
@@ -61,10 +61,10 @@ app.engine(
     defaultLayout: "main",
     layoutsDir: path.join(__dirname, '..', 'views', 'layouts'),
     partialsDir: path.join(__dirname, '..', 'views', 'partials'),
-    extname: ".hbs",
+    extname: ".handlebars",
   })
 );
-
+app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, '..', 'views'));
 
 app.use(cors({
