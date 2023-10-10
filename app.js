@@ -58,17 +58,13 @@ app.engine(
       select,
     },
     defaultLayout: "main",
+    layoutsDir: path.join(__dirname, '..', 'views', 'layouts'),
+    partialsDir: path.join(__dirname, '..', 'views', 'partials'),
     extname: ".hbs",
   })
 );
 
 app.set('views', path.join(__dirname, '..', 'views'));
-app.engine('handlebars', exphbs({
-  defaultLayout: 'main',
-  layoutsDir: path.join(__dirname, '..', 'views', 'layouts'),
-  partialsDir: path.join(__dirname, '..', 'views', 'partials')}
-));
-
 
 //Session
 app.use(
