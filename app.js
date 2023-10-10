@@ -6,7 +6,6 @@ const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const methodOverride = require("method-override");
 const passport = require("passport");
-const path=require('path')
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const connectDB = require("./config/db");
